@@ -76,7 +76,7 @@ fun PhotographerCard(modifier: Modifier = Modifier) {
 
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true, showSystemUi = false)
 @Composable
 fun DefaultPreview() {
     LayoutsTheme {
