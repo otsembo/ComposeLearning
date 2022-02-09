@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontStyle
@@ -32,9 +33,9 @@ import coil.transform.RoundedCornersTransformation
 
 
 //top level definitions
-private val appIcons =  Icons.Rounded
-private const val iconUrl = "https://images.unsplash.com/photo-1531727991582-cfd25ce79613?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-private const val samplePhotography = "https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/344/external-photography-electronics-device-kmg-design-detailed-outline-kmg-design.png"
+val appIcons =  Icons.Rounded
+const val iconUrl = "https://images.unsplash.com/photo-1531727991582-cfd25ce79613?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+const val samplePhotography = "https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/344/external-photography-electronics-device-kmg-design-detailed-outline-kmg-design.png"
 
 private data class MenuOps(val title:String, val isActive:Boolean)
 data class Course(val title: String, val rating:Double, val time:String, val image:String)
@@ -66,7 +67,7 @@ private fun setUpCoursesList() : List<Course>{
 fun HomeScreen(modifier: Modifier) {
 
     Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        color = MaterialTheme.colorScheme.surface,
         modifier = modifier
             .fillMaxSize()
     ) {
@@ -199,7 +200,7 @@ fun Banner(modifier: Modifier) {
                 }),
                 contentDescription = null, modifier = modifier
                     .weight(1f)
-                    .size(128.dp))
+                    .size(128.dp), colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimary))
 
             
         }
@@ -240,7 +241,7 @@ fun MenuSection(modifier: Modifier) {
 @Composable
 fun OptionsChips(modifier: Modifier, active:Boolean, text:String) {
 
-    Surface(modifier = modifier.padding(5.dp), shape = RoundedCornerShape(25.dp), color = if(active) {MaterialTheme.colorScheme.primary} else MaterialTheme.colorScheme.surfaceVariant ) {
+    Surface(modifier = modifier.padding(5.dp), shape = RoundedCornerShape(25.dp), color = if(active) {MaterialTheme.colorScheme.primary} else MaterialTheme.colorScheme.surface ) {
 
         Text(text = text, modifier = modifier.padding(15.dp))
 

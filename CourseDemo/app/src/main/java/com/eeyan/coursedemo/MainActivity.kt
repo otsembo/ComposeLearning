@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.eeyan.coursedemo.ui.screens.detail.DetailPage
 import com.eeyan.coursedemo.ui.screens.main.HomeScreen
 import com.example.compose.AppTheme
 
@@ -14,7 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppTheme {
-                HomePage()
+                DetailsPage()
             }
         }
 
@@ -27,6 +28,15 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun HomePage(){
     HomeScreen(modifier = Modifier)
+    //DetailPage(modifier = Modifier)
+}
+
+
+@Preview(showBackground = true)
+@Composable
+private fun DetailsPage(){
+    //HomeScreen(modifier = Modifier)
+    DetailPage(modifier = Modifier)
 }
 
 
