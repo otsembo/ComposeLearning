@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import com.eeyan.coursedemo.ui.screens.main.BannerChip
 import com.eeyan.coursedemo.ui.screens.main.appIcons
 import com.eeyan.coursedemo.ui.screens.main.samplePhotography
 
@@ -38,15 +39,7 @@ fun DetailPage(modifier: Modifier) {
             
             CourseBanner(modifier = modifier)
             
-            CourseContent(modifier = modifier) {
-
-                Column(modifier = modifier.fillMaxSize()) {
-
-                    SimpleDash(modifier = modifier)
-
-                }
-
-            }
+            CourseContent(modifier = modifier)
 
 
         }
@@ -86,13 +79,21 @@ fun CourseBanner(modifier: Modifier) {
 }
 
 @Composable
-fun CourseContent(modifier: Modifier, content: @Composable (modifier:Modifier) -> Unit  ) {
+fun CourseContent(modifier: Modifier ) {
 
     Card(modifier = modifier.fillMaxSize(),
         shape = RoundedCornerShape(topStart = 25.dp, topEnd = 25.dp),
         backgroundColor = MaterialTheme.colorScheme.primary) {
-        
-        SimpleDash(modifier = modifier)
+
+        Column(modifier = modifier) {
+
+            SimpleDash(modifier = modifier)
+
+            BannerChip(modifier = modifier, info = "New Course")
+
+        }
+
+
         
     }
 
@@ -104,10 +105,13 @@ fun SimpleDash(modifier: Modifier) {
     Row(modifier = modifier
         .fillMaxWidth()
         .height(10.dp)
-        .padding(start = 75.dp, end = 75.dp, top = 5.dp, bottom = 5.dp), horizontalArrangement = Arrangement.Center) {
+        .padding(start = 75.dp, end = 75.dp, top = 5.dp, bottom = 5.dp),
+        horizontalArrangement = Arrangement.Center) {
      
-        Card(modifier = modifier.padding(10.dp).fillMaxWidth(), backgroundColor = MaterialTheme.colorScheme.onPrimary, shape = RoundedCornerShape(100.dp)) {
-            Text(text = "", modifier = modifier.padding(0.01.dp), color = MaterialTheme.colorScheme.secondary)
+        Card(modifier = modifier
+            .padding(10.dp)
+            .fillMaxWidth(), backgroundColor = MaterialTheme.colorScheme.onPrimary, shape = RoundedCornerShape(100.dp)) {
+            Text(text = "", modifier = modifier.padding(0.01.dp), color = MaterialTheme.colorScheme.secondary )
         }
         
     }

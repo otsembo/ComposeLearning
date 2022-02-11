@@ -217,7 +217,7 @@ fun BannerChip(modifier: Modifier, info:String){
             shape = RoundedCornerShape(15.dp),
             color = MaterialTheme.colorScheme.tertiary) {
         
-        Text(text = info, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onTertiary, modifier = modifier.padding(10.dp))
+        Text(text = info, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onTertiary, modifier = modifier.padding(15.dp))
         
     }
 
